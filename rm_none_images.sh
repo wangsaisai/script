@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+echo "---------------before delete images-----------------"
+docker images
+echo "--------------------------------"
+
 file=/tmp/none_images.txt
 docker images | grep none > $file
 
@@ -15,3 +19,6 @@ do
   fi
 done < $file.2
 
+
+echo "---------------after delete images-----------------"
+docker images
