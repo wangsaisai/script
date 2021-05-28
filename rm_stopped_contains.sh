@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+echo "---------------before delete containers-----------------"
+docker ps -a
+echo "--------------------------------"
+
 file=/tmp/contains.txt
 docker ps -a > $file
 
@@ -10,3 +14,5 @@ do
   docker rm  $LINE
 done < $file.2
 
+echo "---------------after delete containers-----------------"
+docker ps -a
